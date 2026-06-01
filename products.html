@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse STACKLY HOME's complete furniture catalog — sofas, beds, dining tables, armchairs, shelving and more. Filter by room, style, and price." />
+  <title>Products — STACKLY HOME Premium Furniture</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C9A96E'/><text y='22' x='4' font-size='20'>🪑</text></svg>" />
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="page-loader">
+    <div class="loader-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:40px;width:auto;" /></div>
+    <div class="loader-bar"></div>
+    <span class="loader-text">Loading Collection</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:30px;width:auto;" /></a>
+      <ul class="nav-menu" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-phone">
+        <div class="nav-phone-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.36 6.36l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="nav-phone-text"><span>Need help?</span><strong><a href="tel:+917010792745" style="color:inherit;text-decoration:none;">+91 70107 92745</a></strong></div>
+      </div>
+      <div class="nav-login-btn-wrap"><a href="login.html" class="nav-login-btn" id="nav-login-link">Login</a></div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:28px;width:auto;" /></a>
+        <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="mobile-login-wrap" style="margin:1rem 0;"></div>
+    </div>
+  </div>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero-mini" aria-label="Products page header">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Products</span></div>
+      <h1>Our Collection</h1>
+      <p>Discover 500+ handpicked furniture pieces for every room in your home.</p>
+    </section>
+
+    <!-- PRODUCTS LAYOUT -->
+    <div class="products-layout">
+      <div class="container">
+
+        <!-- SIDEBAR FILTERS -->
+        <aside class="products-sidebar" aria-label="Filter products">
+          <h3>Filter By</h3>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Room</div>
+            <label><input type="checkbox" checked /> Living Room</label>
+            <label><input type="checkbox" /> Bedroom</label>
+            <label><input type="checkbox" /> Dining Room</label>
+            <label><input type="checkbox" /> Home Office</label>
+            <label><input type="checkbox" /> Outdoor</label>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Style</div>
+            <label><input type="checkbox" checked /> Scandinavian</label>
+            <label><input type="checkbox" /> Japandi</label>
+            <label><input type="checkbox" /> Contemporary</label>
+            <label><input type="checkbox" /> Industrial</label>
+            <label><input type="checkbox" /> Bohemian</label>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Material</div>
+            <label><input type="checkbox" /> Solid Oak</label>
+            <label><input type="checkbox" /> Walnut</label>
+            <label><input type="checkbox" /> Velvet</label>
+            <label><input type="checkbox" /> Linen</label>
+            <label><input type="checkbox" /> Leather</label>
+          </div>
+
+          <div class="filter-group">
+            <div class="filter-group-title">Price Range</div>
+            <input type="range" id="price-range" min="100" max="10000" value="5000" step="100" class="price-range-input" aria-label="Maximum price" />
+            <div class="price-display" id="price-display">Up to $5,000</div>
+          </div>
+
+          <button class="btn btn-gold" style="width:100%;margin-top:1rem;font-size:0.85rem;" id="apply-filters-btn">Apply Filters</button>
+          <button class="btn btn-outline-gold" style="width:100%;margin-top:0.5rem;font-size:0.85rem;" id="clear-filters-btn">Clear All</button>
+        </aside>
+
+        <!-- PRODUCTS MAIN -->
+        <div class="products-main">
+          <!-- Toolbar -->
+          <div class="products-toolbar">
+            <div class="filter-tabs" role="tablist" aria-label="Filter by type">
+              <button class="filter-tab active" data-filter="all" role="tab">All Items</button>
+              <button class="filter-tab" data-filter="living" role="tab">Living Room</button>
+              <button class="filter-tab" data-filter="bedroom" role="tab">Bedroom</button>
+              <button class="filter-tab" data-filter="dining" role="tab">Dining</button>
+              <button class="filter-tab" data-filter="office" role="tab">Office</button>
+            </div>
+            <div class="sort-wrap">
+              <label for="sort-cars" class="sr-only">Sort products</label>
+              <select id="sort-cars" aria-label="Sort products">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="newest">Newest First</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="products-grid cars-grid" id="vehicles-grid">
+
+            <article class="car-card" data-anim="fade-up" data-delay="100" data-type="living" data-price="1299">
+              <div class="car-card-img">
+                <img src="images/product_sofa.png" alt="Luna Velvet Sofa cream" loading="lazy" />
+                <span class="card-badge">Best Seller</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Luna Velvet Sofa</h3><span>Living Room</span></div>
+                  <div class="car-price"><span class="price">$1,299</span><span class="per">free delivery</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Velvet</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>220cm</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>3 Colors</div>
+                </div>
+                <a href="details.html?item=luna-velvet-sofa" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+            <article class="car-card" data-anim="fade-up" data-delay="200" data-type="dining" data-price="2499">
+              <div class="car-card-img">
+                <img src="images/product_dining.png" alt="Oslo Walnut Dining Table Set" loading="lazy" />
+                <span class="card-badge">New Arrival</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Oslo Dining Set</h3><span>Dining Room</span></div>
+                  <div class="car-price"><span class="price">$2,499</span><span class="per">6 chairs incl.</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Walnut</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>180cm</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>2 Finishes</div>
+                </div>
+                <a href="details.html?item=oslo-dining-set" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+            <article class="car-card" data-anim="fade-up" data-delay="300" data-type="bedroom" data-price="1899">
+              <div class="car-card-img">
+                <img src="images/product_bed.png" alt="Nox King Bed navy blue upholstered" loading="lazy" />
+                <span class="card-badge">Premium</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Nox King Bed</h3><span>Bedroom</span></div>
+                  <div class="car-price"><span class="price">$1,899</span><span class="per">frame only</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Linen</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>King</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>4 Colors</div>
+                </div>
+                <a href="details.html?item=nox-king-bed" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+            <article class="car-card" data-anim="fade-up" data-delay="400" data-type="living" data-price="649">
+              <div class="car-card-img">
+                <img src="images/product_armchair.png" alt="Terracotta bouclé armchair with oak legs" loading="lazy" />
+                <span class="card-badge">Trending</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Riko Accent Chair</h3><span>Living Room</span></div>
+                  <div class="car-price"><span class="price">$649</span><span class="per">free delivery</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Bouclé</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Oak Legs</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>5 Colors</div>
+                </div>
+                <a href="details.html?item=riko-accent-chair" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+            <article class="car-card" data-anim="fade-up" data-delay="100" data-type="office" data-price="899">
+              <div class="car-card-img">
+                <img src="images/product_bookshelf.png" alt="Minimalist oak open bookshelf" loading="lazy" />
+                <span class="card-badge">Popular</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Mori Bookshelf</h3><span>Office / Living</span></div>
+                  <div class="car-price"><span class="price">$899</span><span class="per">free delivery</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Solid Oak</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>180cm tall</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>5 Shelves</div>
+                </div>
+                <a href="details.html?item=mori-bookshelf" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+            <article class="car-card" data-anim="fade-up" data-delay="200" data-type="bedroom" data-price="3299">
+              <div class="car-card-img">
+                <img src="images/product_sofa.png" alt="Premium wardrobe with sliding doors" loading="lazy" />
+                <span class="card-badge">Luxury</span>
+                <button class="card-wishlist" aria-label="Add to wishlist"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+              </div>
+              <div class="car-card-body">
+                <div class="car-card-header">
+                  <div class="car-name"><h3>Aura Wardrobe</h3><span>Bedroom</span></div>
+                  <div class="car-price"><span class="price">$3,299</span><span class="per">incl. install</span></div>
+                </div>
+                <div class="car-specs">
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>Walnut</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>240cm</div>
+                  <div class="car-spec"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>Sliding</div>
+                </div>
+                <a href="details.html?item=aura-wardrobe" class="btn btn-card">View Details</a>
+              </div>
+            </article>
+
+          </div><!-- /#vehicles-grid -->
+        </div><!-- /.products-main -->
+      </div><!-- /.container -->
+    </div><!-- /.products-layout -->
+  </main>
+
+  <!-- FOOTER (shortened) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-cols" style="padding:2.5rem 0;">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:32px;width:auto;margin-bottom:0.75rem;" /></a>
+          <p class="footer-tagline">Transforming houses into homes since 1999.</p>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Categories</h4><ul><li><a href="products.html">Living Room</a></li><li><a href="products.html">Bedroom</a></li><li><a href="products.html">Dining</a></li><li><a href="products.html">Office</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul><li><a href="contact.html">Help Center</a></li><li><a href="contact.html">Returns</a></li><li><a href="contact.html">Warranty</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 STACKLY HOME. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('apply-filters-btn')?.addEventListener('click', () => {
+      showToast('Filters applied! Showing matching items.', 'success');
+    });
+    document.getElementById('clear-filters-btn')?.addEventListener('click', () => {
+      document.querySelectorAll('.products-sidebar input[type="checkbox"]').forEach(cb => cb.checked = false);
+      document.getElementById('price-range').value = 10000;
+      document.getElementById('price-display').textContent = 'Up to $10,000';
+      showToast('Filters cleared.', 'info');
+    });
+  </script>
+</body>
+</html>

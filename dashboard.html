@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your STACKLY HOME dashboard — view order history, saved items, and manage your profile." />
+  <title>Dashboard — STACKLY HOME</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C9A96E'/><text y='22' x='4' font-size='20'>🪑</text></svg>" />
+</head>
+<body>
+
+  <div id="page-loader">
+    <div class="loader-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:40px;width:auto;" /></div>
+    <div class="loader-bar"></div>
+    <span class="loader-text">Your Dashboard</span>
+  </div>
+
+
+
+  <main>
+    <section class="page-hero-mini" style="padding:2rem 1.25rem 1.5rem;" aria-label="Dashboard header">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Dashboard</span></div>
+      <h1 style="font-size:clamp(1.5rem,3vw,2.5rem)">My Dashboard</h1>
+    </section>
+
+    <div class="dashboard-layout">
+      <div class="container">
+
+        <!-- SIDEBAR -->
+        <aside class="dash-sidebar" aria-label="Dashboard navigation">
+          <div class="dash-user-info">
+            <div class="dash-avatar" id="dash-avatar-initials">U</div>
+            <div class="dash-user-name" id="dash-user-name">Welcome back!</div>
+            <div class="dash-user-email" id="dash-user-email">user@example.com</div>
+            <span class="role-badge" id="dash-role-badge">customer</span>
+          </div>
+          <nav class="dash-nav" aria-label="Dashboard sections">
+            <a href="#overview" class="dash-nav-item active" id="nav-overview" onclick="showSection('overview', this)">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Overview
+            </a>
+            <a href="#orders" class="dash-nav-item" id="nav-orders" onclick="showSection('orders', this)">
+              <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              My Orders
+            </a>
+            <a href="#saved" class="dash-nav-item" id="nav-saved" onclick="showSection('saved', this)">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              Saved Items
+            </a>
+            <a href="#profile" class="dash-nav-item" id="nav-profile" onclick="showSection('profile', this)">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              My Profile
+            </a>
+            <button class="dash-nav-item" style="color:#ef4444;" onclick="authLogout()">
+              <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+              Logout
+            </button>
+          </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="dash-main">
+
+          <!-- OVERVIEW -->
+          <section id="section-overview" class="dash-section" aria-label="Overview">
+            <div class="dash-section-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--primary)" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+              Overview
+            </div>
+            <div class="dash-stats">
+              <div class="dash-stat-card" data-anim="fade-up" data-delay="100">
+                <div class="stat-value">3</div>
+                <div class="stat-label">Total Orders</div>
+              </div>
+              <div class="dash-stat-card" data-anim="fade-up" data-delay="200">
+                <div class="stat-value">$4,847</div>
+                <div class="stat-label">Total Spent</div>
+              </div>
+              <div class="dash-stat-card" data-anim="fade-up" data-delay="300">
+                <div class="stat-value">5</div>
+                <div class="stat-label">Saved Items</div>
+              </div>
+              <div class="dash-stat-card" data-anim="fade-up" data-delay="400">
+                <div class="stat-value">4.8★</div>
+                <div class="stat-label">Your Avg Rating</div>
+              </div>
+            </div>
+
+            <!-- Recent orders preview -->
+            <div style="margin-top:1.5rem;">
+              <div style="font-size:0.85rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;">Recent Orders</div>
+              <div class="order-item">
+                <div class="order-img"><img src="images/product_sofa.png" alt="Luna Velvet Sofa" /></div>
+                <div class="order-info">
+                  <h4>Luna Velvet Sofa</h4>
+                  <p>Order #SH-2025-001 · 15 May 2025</p>
+                </div>
+                <span class="order-status delivered">Delivered</span>
+              </div>
+              <div class="order-item">
+                <div class="order-img"><img src="images/product_dining.png" alt="Oslo Dining Set" /></div>
+                <div class="order-info">
+                  <h4>Oslo Dining Set</h4>
+                  <p>Order #SH-2025-002 · 28 May 2025</p>
+                </div>
+                <span class="order-status processing">Processing</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ORDERS -->
+          <section id="section-orders" class="dash-section" style="display:none;" aria-label="My Orders">
+            <div class="dash-section-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--primary)" fill="none" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+              My Orders
+            </div>
+            <div class="order-item">
+              <div class="order-img"><img src="images/product_sofa.png" alt="Luna Velvet Sofa" /></div>
+              <div class="order-info">
+                <h4>Luna Velvet Sofa — Cream</h4>
+                <p>Order #SH-2025-001 · 15 May 2025 · $1,299</p>
+              </div>
+              <span class="order-status delivered">Delivered</span>
+            </div>
+            <div class="order-item">
+              <div class="order-img"><img src="images/product_dining.png" alt="Oslo Dining Set" /></div>
+              <div class="order-info">
+                <h4>Oslo Dining Set — Walnut</h4>
+                <p>Order #SH-2025-002 · 28 May 2025 · $2,499</p>
+              </div>
+              <span class="order-status processing">Processing</span>
+            </div>
+            <div class="order-item">
+              <div class="order-img"><img src="images/product_armchair.png" alt="Riko Accent Chair" /></div>
+              <div class="order-info">
+                <h4>Riko Accent Chair — Terracotta</h4>
+                <p>Order #SH-2025-003 · 30 May 2025 · $649</p>
+              </div>
+              <span class="order-status shipped">Shipped</span>
+            </div>
+          </section>
+
+          <!-- SAVED ITEMS -->
+          <section id="section-saved" class="dash-section" style="display:none;" aria-label="Saved Items">
+            <div class="dash-section-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--primary)" fill="none" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              Saved Items
+            </div>
+            <div class="saved-items-grid">
+              <div class="saved-item">
+                <img src="images/product_bed.png" alt="Nox King Bed" />
+                <div class="saved-item-info"><h4>Nox King Bed</h4><p>$1,899</p></div>
+              </div>
+              <div class="saved-item">
+                <img src="images/product_bookshelf.png" alt="Mori Bookshelf" />
+                <div class="saved-item-info"><h4>Mori Bookshelf</h4><p>$899</p></div>
+              </div>
+              <div class="saved-item">
+                <img src="images/product_armchair.png" alt="Riko Accent Chair" />
+                <div class="saved-item-info"><h4>Riko Accent Chair</h4><p>$649</p></div>
+              </div>
+              <div class="saved-item">
+                <img src="images/product_sofa.png" alt="Luna Velvet Sofa" />
+                <div class="saved-item-info"><h4>Luna Velvet Sofa</h4><p>$1,299</p></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PROFILE -->
+          <section id="section-profile" class="dash-section" style="display:none;" aria-label="Profile settings">
+            <div class="dash-section-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="var(--primary)" fill="none" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              My Profile
+            </div>
+            <form id="profile-form" style="max-width:500px;">
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label class="form-group label" style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Full Name</label>
+                <input type="text" class="form-control" id="profile-name" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Email Address</label>
+                <input type="email" class="form-control" id="profile-email" placeholder="your@email.com" autocomplete="email" />
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Phone Number</label>
+                <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+              </div>
+              <div class="form-group" style="margin-bottom:1.5rem;">
+                <label style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">New Password</label>
+                <input type="password" class="form-control" placeholder="Leave blank to keep current" />
+              </div>
+              <button type="submit" class="btn btn-gold" style="width:100%;" onclick="event.preventDefault();showToast('Profile updated successfully!','success');">Save Changes</button>
+            </form>
+          </section>
+
+        </div><!-- /.dash-main -->
+      </div><!-- /.container -->
+    </div><!-- /.dashboard-layout -->
+  </main>
+
+
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate dashboard with user data
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = authGetUser();
+      if (!user) { window.location.href = 'login.html'; return; }
+
+      const nameEl = document.getElementById('dash-user-name');
+      const emailEl = document.getElementById('dash-user-email');
+      const roleEl = document.getElementById('dash-role-badge');
+      const avatarEl = document.getElementById('dash-avatar-initials');
+      const profileName = document.getElementById('profile-name');
+      const profileEmail = document.getElementById('profile-email');
+
+      if (nameEl) nameEl.textContent = user.name || 'Welcome!';
+      if (emailEl) emailEl.textContent = user.email;
+      if (roleEl) roleEl.textContent = user.role || 'customer';
+      if (avatarEl) avatarEl.textContent = (user.name || 'U')[0].toUpperCase();
+      if (profileName) profileName.value = user.name || '';
+      if (profileEmail) profileEmail.value = user.email || '';
+
+      // Check hash for section
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const navItem = document.getElementById(`nav-${hash}`);
+        if (navItem) showSection(hash, navItem);
+      }
+    });
+
+    function showSection(id, el) {
+      document.querySelectorAll('.dash-main > section').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('.dash-nav-item').forEach(n => n.classList.remove('active'));
+      const section = document.getElementById(`section-${id}`);
+      if (section) section.style.display = 'block';
+      if (el) el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

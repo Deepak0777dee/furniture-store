@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact STACKLY HOME — reach us by phone, email, or visit our Salem showroom. Our interior design team is ready to help." />
+  <title>Contact Us — STACKLY HOME</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C9A96E'/><text y='22' x='4' font-size='20'>🪑</text></svg>" />
+</head>
+<body>
+
+  <div id="page-loader">
+    <div class="loader-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:40px;width:auto;" /></div>
+    <div class="loader-bar"></div>
+    <span class="loader-text">Get In Touch</span>
+  </div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:30px;width:auto;" /></a>
+      <ul class="nav-menu" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="details.html">Details</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-phone">
+        <div class="nav-phone-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.36 6.36l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div class="nav-phone-text"><span>Need help?</span><strong><a href="tel:+917010792745" style="color:inherit;text-decoration:none;">+91 70107 92745</a></strong></div>
+      </div>
+      <div class="nav-login-btn-wrap"><a href="login.html" class="nav-login-btn" id="nav-login-link">Login</a></div>
+      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" role="dialog" aria-modal="true">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:28px;width:auto;" /></a>
+        <button class="mobile-menu-close">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li>
+        <li><a href="details.html">Details</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="mobile-login-wrap" style="margin:1rem 0;"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="page-hero-mini" aria-label="Contact page header">
+      <div class="breadcrumb"><a href="index.html">Home</a> <span>/</span> <span>Contact</span></div>
+      <h1>Get In Touch</h1>
+      <p>We'd love to hear from you. Visit our showroom or reach out online.</p>
+    </section>
+
+    <section class="contact-section" aria-label="Contact form and info">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- CONTACT FORM -->
+          <div class="contact-form-wrap" data-anim="fade-right">
+            <h3>Send Us a Message</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Full Name</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="Your full name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="your@email.com" required autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" class="form-control" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject">Subject</label>
+                  <select id="contact-subject" class="form-control">
+                    <option value="" disabled selected>Select a topic</option>
+                    <option>Product Inquiry</option>
+                    <option>Order Tracking</option>
+                    <option>Design Consultation</option>
+                    <option>Returns &amp; Warranty</option>
+                    <option>Bulk / Corporate Order</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom:1rem;">
+                <label for="contact-message">Your Message</label>
+                <textarea id="contact-message" class="form-control" placeholder="Tell us how we can help you…" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold" style="width:100%;font-size:1rem;padding:1rem;" id="contact-submit-btn">
+                Send Message
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2.5" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- CONTACT INFO -->
+          <div class="contact-info-wrap" data-anim="fade-left">
+            <div class="contact-info-card">
+              <h3>Contact Information</h3>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                <div>
+                  <strong>Showroom Address</strong>
+                  <p>MMR Complex, Chinna Thirupathi, near Chinna Muniyappan Kovil, Salem, Tamil Nadu 636008</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.36 6.36l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+                <div>
+                  <strong>Phone</strong>
+                  <p><a href="tel:+917010792745" style="color:var(--primary);">+91 70107 92745</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <div>
+                  <strong>Email</strong>
+                  <p><a href="mailto:info@stacklyhome.com" style="color:var(--primary);">info@stacklyhome.com</a></p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                <div>
+                  <strong>Showroom Hours</strong>
+                  <p>Mon–Sat: 10am – 8pm<br/>Sunday: 11am – 6pm</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- MAP -->
+            <div class="map-embed" aria-label="Location map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.2!2d78.136!3d11.6643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSalem%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="STACKLY HOME showroom location in Salem, Tamil Nadu">
+              </iframe>
+            </div>
+
+            <!-- DESIGN CONSULTATION CTA -->
+            <div style="background:rgba(201,169,110,0.06);border:1px solid var(--border);border-radius:var(--border-radius-lg);padding:1.5rem;text-align:center;">
+              <h4 style="font-family:var(--font-display);color:var(--text-primary);margin-bottom:0.5rem;">Free Design Consultation</h4>
+              <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1rem;">Book a free 30-minute session with our interior design team — in-store or via video call.</p>
+              <a href="tel:+917010792745" class="btn btn-gold" style="width:100%;">Book Now — It's Free</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-cols" style="padding:2.5rem 0;">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:32px;width:auto;margin-bottom:0.75rem;" /></a>
+          <p class="footer-tagline">Transforming houses into homes since 1999.</p>
+        </div>
+        <div class="footer-col"><h4>Navigation</h4><ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Categories</h4><ul><li><a href="products.html">Living Room</a></li><li><a href="products.html">Bedroom</a></li><li><a href="products.html">Dining</a></li><li><a href="products.html">Office</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul><li><a href="contact.html">Help</a></li><li><a href="contact.html">Returns</a></li><li><a href="contact.html">Warranty</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2025 STACKLY HOME. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
