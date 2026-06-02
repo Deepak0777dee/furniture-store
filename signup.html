@@ -191,12 +191,9 @@
       btn.disabled = true;
 
       setTimeout(() => {
-        const user = authSignup(name, email, selectedRole, password);
-        // Auto-login after signup
-        const loggedUser = { ...user, loggedIn: true };
-        localStorage.setItem('sh_user', JSON.stringify(loggedUser));
-        showToast('Account created! Welcome to STACKLY HOME', 'success');
-        setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
+        authSignup(name, email, selectedRole, password);
+        showToast('Account created successfully! Please sign in.', 'success');
+        setTimeout(() => { window.location.href = 'login.html'; }, 1500);
       }, 1000);
     });
   </script>

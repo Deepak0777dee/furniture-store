@@ -4102,3 +4102,7 @@ textarea.form-control {
     display: block;
   }
 }
+/* Invert logo for dark theme */
+img[src*="logo-stackly"] {
+  filter: invert(1);
+}
