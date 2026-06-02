@@ -18,7 +18,7 @@
   <main class="auth-page" aria-label="Sign up page">
     <div class="auth-card" data-anim="fade-up">
       <div style="margin-bottom:1rem;">
-        <a href="index.html" style="font-size:0.85rem;font-weight:600;color:var(--gray-500);display:inline-flex;align-items:center;gap:0.25rem;">
+        <a href="javascript:history.back()" style="font-size:0.85rem;font-weight:600;color:var(--gray-500);display:inline-flex;align-items:center;gap:0.25rem;">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Go Back
         </a>
       </div>
@@ -50,22 +50,26 @@
         </div>
       </div>
 
-      <form class="auth-form" id="signup-form" novalidate>
+      <form class="auth-form" id="signup-form">
         <div class="form-group">
           <label for="signup-name" style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Full Name</label>
           <input type="text" id="signup-name" class="form-control" placeholder="Your full name" required autocomplete="name" />
+          <div class="error-msg" id="signup-name-error"></div>
         </div>
         <div class="form-group">
           <label for="signup-email" style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Email Address</label>
           <input type="email" id="signup-email" class="form-control" placeholder="your@email.com" required autocomplete="email" />
+          <div class="error-msg" id="signup-email-error"></div>
         </div>
         <div class="form-group">
           <label for="signup-password" style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Password</label>
           <input type="password" id="signup-password" class="form-control" placeholder="Min. 8 characters" required autocomplete="new-password" />
+          <div class="error-msg" id="signup-password-error"></div>
         </div>
         <div class="form-group">
           <label for="signup-confirm" style="font-size:0.78rem;font-weight:700;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;display:block;">Confirm Password</label>
           <input type="password" id="signup-confirm" class="form-control" placeholder="Repeat your password" required autocomplete="new-password" />
+          <div class="error-msg" id="signup-confirm-error"></div>
         </div>
         <div style="display:flex;align-items:flex-start;gap:0.5rem;margin-top:0.25rem;">
           <input type="checkbox" id="signup-terms" style="margin-top:3px;accent-color:var(--primary);flex-shrink:0;" required />
@@ -98,8 +102,21 @@
       btn.classList.add('active');
     }
 
+        function showInlineError(id, msg) {
+      const input = document.getElementById(id);
+      const errorDiv = document.getElementById(id + '-error');
+      if(input) input.classList.add('is-invalid');
+      if(errorDiv) { errorDiv.textContent = msg; errorDiv.style.display = 'block'; }
+    }
+    function clearInlineErrors() {
+      document.querySelectorAll('.form-control.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+      document.querySelectorAll('.error-msg').forEach(el => el.style.display = 'none');
+    }
+
     document.getElementById('signup-form').addEventListener('submit', function(e) {
       e.preventDefault();
+      clearInlineErrors();
+      
       const name = document.getElementById('signup-name').value.trim();
       const email = document.getElementById('signup-email').value.trim();
       const password = document.getElementById('signup-password').value;
@@ -107,10 +124,24 @@
       const terms = document.getElementById('signup-terms').checked;
       const btn = document.getElementById('signup-submit-btn');
 
-      if (!name || !email || !password) { showToast('Please fill in all required fields.', 'warning'); return; }
-      if (password !== confirm) { showToast('Passwords do not match.', 'error'); return; }
-      if (password.length < 8) { showToast('Password must be at least 8 characters.', 'warning'); return; }
-      if (!terms) { showToast('Please accept the Terms of Service.', 'warning'); return; }
+      let isValid = true;
+      if (!name) { showInlineError('signup-name', 'Please enter your full name.'); isValid = false; }
+      else if (/[0-9]/.test(name)) { showInlineError('signup-name', 'Name cannot contain numbers.'); isValid = false; }
+      
+      if (!email) { showInlineError('signup-email', 'Please enter your email address.'); isValid = false; }
+      else if (!/^\S+@\S+\.\S+$/.test(email)) { showInlineError('signup-email', 'Please enter a valid email address.'); isValid = false; }
+      
+      const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+      if (!password) { showInlineError('signup-password', 'Please enter a password.'); isValid = false; }
+      else if (!passRegex.test(password)) { 
+        showInlineError('signup-password', 'Password must be at least 8 chars, with 1 uppercase, 1 lowercase, 1 number, and 1 special char (e.g., John@123).'); 
+        isValid = false; 
+      }
+      
+      if (password !== confirm) { showInlineError('signup-confirm', 'Passwords do not match.'); isValid = false; }
+      if (!terms) { showInlineError('signup-terms', 'Please accept the Terms of Service.'); isValid = false; }
+
+      if (!isValid) return;
 
       btn.textContent = 'Creating account…';
       btn.disabled = true;
@@ -120,7 +151,7 @@
         // Auto-login after signup
         const loggedUser = { ...user, loggedIn: true };
         localStorage.setItem('sh_user', JSON.stringify(loggedUser));
-        showToast('Account created! Welcome to STACKLY HOME ðŸ ', 'success');
+        showToast('Account created! Welcome to STACKLY HOME', 'success');
         setTimeout(() => { window.location.href = 'dashboard.html'; }, 1500);
       }, 1000);
     });

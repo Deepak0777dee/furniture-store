@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Page not found — STACKLY HOME. The page you're looking for doesn't exist or has been moved." />
+  <meta name="description"
+    content="Page not found — STACKLY HOME. The page you're looking for doesn't exist or has been moved." />
   <title>404 — Page Not Found | STACKLY HOME</title>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C9A96E'/><text y='22' x='4' font-size='20'>🪑</text></svg>" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C9A96E'/><text y='22' x='4' font-size='20'>🪑</text></svg>" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner container">
-      <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME" style="height:30px;width:auto;" /></a>
+      <a href="index.html" class="nav-logo"><img src="images/logo-stackly.png" alt="STACKLY HOME"
+          style="height:30px;width:auto;" /></a>
       <ul class="nav-menu" role="list">
         <li><a href="index.html">Home</a></li>
         <li><a href="products.html">Products</a></li>
@@ -21,66 +26,58 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-login-btn-wrap"><a href="login.html" class="nav-login-btn" id="nav-login-link">Login</a></div>
-      <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Toggle mobile menu"
+        aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <main class="error-page" aria-label="Error 404 page not found">
     <!-- Animated background -->
     <div style="position:absolute;inset:0;pointer-events:none;">
-      <div style="position:absolute;top:20%;left:10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,0.06) 0%,transparent 70%);animation:floatOrb 8s ease-in-out infinite;"></div>
-      <div style="position:absolute;bottom:20%;right:10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(45,74,62,0.1) 0%,transparent 70%);animation:floatOrb 6s ease-in-out infinite reverse;"></div>
+      <div
+        style="position:absolute;top:20%;left:10%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,0.06) 0%,transparent 70%);animation:floatOrb 8s ease-in-out infinite;">
+      </div>
+      <div
+        style="position:absolute;bottom:20%;right:10%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(45,74,62,0.1) 0%,transparent 70%);animation:floatOrb 6s ease-in-out infinite reverse;">
+      </div>
     </div>
 
     <style>
-      @keyframes floatOrb { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-30px);} }
+      @keyframes floatOrb {
+
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-30px);
+        }
+      }
     </style>
 
     <div class="error-content">
       <span class="error-num" aria-hidden="true">404</span>
-      <h2>Oops! Room Not Found</h2>
+      <h2>Oops! Page Not Found</h2>
       <p>It seems like this page has been moved or redecorated. Let's get you back to the good stuff.</p>
 
-      <!-- Mini search -->
-      <div style="max-width:380px;margin:0 auto 2rem;">
-        <div class="cta-search" role="search">
-          <label for="error-search" class="sr-only">Search products</label>
-          <input type="text" id="error-search" placeholder="Search for furniture…" aria-label="Search for products" />
-          <button type="button" id="error-search-btn">Search</button>
-        </div>
-      </div>
-
       <div class="error-actions">
-        <a href="index.html" class="btn btn-gold" id="error-home-btn">
-          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          Back to Home
+        <a href="javascript:history.back()" class="btn btn-gold" id="error-home-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          Go Back
         </a>
-        <a href="products.html" class="btn btn-outline-gold" id="error-products-btn">Browse Collection</a>
         <a href="contact.html" class="btn btn-dark" id="error-contact-btn">Contact Us</a>
       </div>
 
-      <!-- Quick links -->
-      <div style="margin-top:3rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
-        <span style="font-size:0.82rem;color:var(--gray-500);">Popular:</span>
-        <a href="products.html" style="font-size:0.82rem;color:var(--primary);text-decoration:underline;text-underline-offset:3px;">Living Room</a>
-        <a href="products.html" style="font-size:0.82rem;color:var(--primary);text-decoration:underline;text-underline-offset:3px;">Bedroom</a>
-        <a href="products.html" style="font-size:0.82rem;color:var(--primary);text-decoration:underline;text-underline-offset:3px;">Dining</a>
-        <a href="about.html" style="font-size:0.82rem;color:var(--primary);text-decoration:underline;text-underline-offset:3px;">About Us</a>
-      </div>
     </div>
   </main>
 
   <script src="js/auth.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    document.getElementById('error-search-btn')?.addEventListener('click', () => {
-      const val = document.getElementById('error-search').value.trim();
-      if (val) { showToast(`Searching for "${val}"…`, 'info'); setTimeout(() => { window.location.href = 'products.html'; }, 1200); }
-      else { showToast('Please enter a search term.', 'warning'); }
-    });
-    document.getElementById('error-search')?.addEventListener('keydown', e => {
-      if (e.key === 'Enter') document.getElementById('error-search-btn').click();
-    });
   </script>
 </body>
+
 </html>

@@ -1895,3 +1895,27 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   border-radius: var(--border-radius-sm);
 }
 @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Error Message Styles */
+.error-msg {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+.form-control.is-invalid {
+  border-color: #ef4444;
+}
+.form-control.is-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+/* Hide login button in navbar on mobile */
+.nav-login-btn-wrap {
+  display: none;
+}
+@media (min-width: 768px) {
+  .nav-login-btn-wrap {
+    display: block;
+  }
+}
