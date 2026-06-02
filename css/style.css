@@ -4075,3 +4075,15 @@ textarea.form-control {
     background-position: -200% 0;
   }
 }
+/* Responsive Order Items */
+@media (max-width: 576px) {
+  .order-item {
+    flex-wrap: wrap;
+  }
+  .order-item .order-info {
+    min-width: 150px;
+  }
+  .order-item .order-status {
+    margin-left: auto;
+  }
+}
